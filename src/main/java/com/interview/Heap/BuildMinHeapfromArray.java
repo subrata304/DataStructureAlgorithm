@@ -13,12 +13,12 @@ public class BuildMinHeapfromArray {
 		//int A[] = {1, 14, 10, 8, 7, 9, 3, 2, 4, 6};
 		int A[] = {12, 20, 2, 13, 32, 50, 88, 21, 18, 91};
 		System.out.println("Given input array is: "+ Arrays.toString(A));
-		buildMinHeap(A);
+		buildMinHeap(A, A.length);
 		System.out.println("After Min Heapify array is: "+ Arrays.toString(A));
 	}
 	
-	protected static void buildMinHeap(int[] A){
-		for(int i = (A.length -1)/2 ; i>=0 ;i--){
+	protected static void buildMinHeap(int[] A, int size){
+		for(int i = size/2 - 1 ; i>=0 ;i--){
 			minHeapify(A, i);
 		}
 	}
@@ -27,10 +27,6 @@ public class BuildMinHeapfromArray {
 		int left = 2*i + 1;
 		int right = 2*i + 2;
 		int smallest;
-		
-		/*if( left > A.length && right > A.length){
-			return;
-		}*/
 		
 		if(left < A.length && A[left] < A[i]){
 			smallest = left;
@@ -44,10 +40,8 @@ public class BuildMinHeapfromArray {
 			int temp = A[smallest];
 			A[smallest] = A[i];
 			A[i] = temp;
-		}else{
-			return;
-		}
-		System.out.println("Before calling recursion: "+ Arrays.toString(A));
-		minHeapify(A, smallest);
+			System.out.println("Before calling recursion: "+ Arrays.toString(A));
+			minHeapify(A, smallest);
+		}		
 	}
 }

@@ -16,9 +16,9 @@ public class BuildMaxHeapfromArray {
 		buildMaxHeap(A, A.length);
 		System.out.println("After Max Heapify array is: "+ Arrays.toString(A));
 	}
-	
+
 	protected static void buildMaxHeap(int[] A, int size){
-		for(int i = (size -1)/2 ; i>=0 ;i--){
+		for(int i = size/2 -1 ; i>=0 ;i--){
 			maxHeapify(A, i);
 		}
 	}
@@ -27,11 +27,7 @@ public class BuildMaxHeapfromArray {
 		int left = 2*i + 1;
 		int right = 2*i + 2;
 		int largest;
-		
-		if( left > A.length && right > A.length){
-			return;
-		}
-		
+				
 		if(left < A.length && A[left] > A[i]){
 			largest = left;
 		}else{
@@ -44,8 +40,8 @@ public class BuildMaxHeapfromArray {
 			int temp = A[largest];
 			A[largest] = A[i];
 			A[i] = temp;
+			System.out.println("Before calling recursion: "+ Arrays.toString(A));
+			maxHeapify(A, largest);
 		}
-		System.out.println("Before calling recursion: "+ Arrays.toString(A));
-		maxHeapify(A, largest);
 	}
 }
