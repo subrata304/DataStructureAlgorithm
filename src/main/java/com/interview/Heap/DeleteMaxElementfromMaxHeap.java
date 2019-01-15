@@ -2,21 +2,31 @@ package com.interview.Heap;
 
 import java.util.Arrays;
 
+
+/*
+ * Delete the max element from a existing Heap.
+ */
+
+
 public class DeleteMaxElementfromMaxHeap {
 
-	
 	public static void main(String[] args) {
-		//int A[] = {1, 14, 10, 8, 7, 9, 3, 2, 4, 6};
-		int A[] = {12, 20, 2, 13, 32, 50, 88, 21, 18, 91};
-		System.out.println("Given input array is: "+ Arrays.toString(A));
 		
-		BuildMaxHeapfromArray.buildMaxHeap(A); // Using Existing method to build the Max heap from Array
+		int A[] = {91, 32, 88, 21, 20, 50, 2, 13, 18, 12}; // Input Array is alreay a Max Heap
+		System.out.println("Given input array is: "+ Arrays.toString(A));		
 		
+		int maxElement = deleteMaxElement(A);
 		
-		System.out.println("After Max Heapify array is: "+ Arrays.toString(A));
+		System.out.println("The Max Element is: "+ maxElement);
+		
 	}
 	/*
 	 * This method will return -1 in negative cases.
+	 * In case only one element is there in the Heap, It will return first element.
+	 * 
+	 * In case more than one element is there, it will first store the first element in some temp variable, 
+	 * replace the root with last element of the array and then call MaxHeapify
+	 * 
 	 */
 	protected static int deleteMaxElement(int A[]){
 		int size = A.length;
@@ -28,7 +38,9 @@ public class DeleteMaxElementfromMaxHeap {
 		int max = A[0];
 		A[0] = A[size - 1];
 		size--;
-		
-		return 1;
+		A = Arrays.copyOf(A, size);
+		BuildMaxHeapfromArray.maxHeapify(A, 0);
+		System.out.println("After Max Heapify array is: "+ Arrays.toString(A));
+		return max;
 	}
 }
