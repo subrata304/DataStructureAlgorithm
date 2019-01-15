@@ -4,20 +4,20 @@ import java.util.Arrays;
 
 
 /*
- * Delete the max element from a existing Heap.
+ * Delete the min element from a existing Heap.
  */
 
 
-public class DeleteMaxElementfromMaxHeap {
+public class DeleteMinElementfromMinHeap {
 
 	public static void main(String[] args) {
 		
-		int A[] = {91, 32, 88, 21, 20, 50, 2, 13, 18, 12}; // Input Array is alreay a Max Heap
+		int A[] = {2, 13, 12, 18, 32, 50, 88, 21, 20, 91}; // Input Array is alreay a Min Heap
 		System.out.println("Given input array is: "+ Arrays.toString(A));		
 		
-		int maxElement = deleteMaxElement(A);
+		int minElement = deleteMinElement(A);
 		
-		System.out.println("The Max Element is: "+ maxElement);
+		System.out.println("The Min Element is: "+ minElement);
 		
 	}
 	/*
@@ -27,25 +27,24 @@ public class DeleteMaxElementfromMaxHeap {
 	 * In case more than one element is there, 
 	 * 1. It will first copy the root(first) element in some temp variable, 
 	 * 2. Replace the root with last element of the heap/array
-	 * 3. Call MaxHeapify
+	 * 3. Call MinHeapify
 	 * 
-	 * Time Complexity of this algorithm is : O(logn), as we are calling maxHeapify which needs Order of the height 
+	 * Time Complexity of this algorithm is : O(log n), as we are calling minHeapify which needs Order of the height 
 	 * i.e. O(log n), Space complexity also O(log n)
-	 * 
 	 */
-	protected static int deleteMaxElement(int A[]){
+	protected static int deleteMinElement(int A[]){
 		int size = A.length;
 		if(size == 0){
 			return -1;
 		}else if(size == 1){
 			return A[0];
 		}
-		int max = A[0];
+		int min = A[0];
 		A[0] = A[size - 1];
 		size--;
 		A = Arrays.copyOf(A, size);
-		BuildMaxHeapfromArray.maxHeapify(A, 0);
-		System.out.println("After Max Heapify array is: "+ Arrays.toString(A));
-		return max;
+		BuildMinHeapfromArray.minHeapify(A, 0);
+		System.out.println("After Min Heapify array is: "+ Arrays.toString(A));
+		return min;
 	}
 }

@@ -14,7 +14,7 @@ public class BuildMinHeapfromArray {
 		int A[] = {12, 20, 2, 13, 32, 50, 88, 21, 18, 91};
 		System.out.println("Given input array is: "+ Arrays.toString(A));
 		buildMinHeap(A);
-		System.out.println("After Max Heapify array is: "+ Arrays.toString(A));
+		System.out.println("After Min Heapify array is: "+ Arrays.toString(A));
 	}
 	
 	protected static void buildMinHeap(int[] A){
