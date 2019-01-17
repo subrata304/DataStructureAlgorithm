@@ -11,5 +11,6 @@ public class PrintLinkedList {
 			}
 			temp = temp.getNext();
 		}
+		System.out.println();
 	}
 }

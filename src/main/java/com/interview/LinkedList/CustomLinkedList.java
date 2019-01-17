@@ -9,6 +9,7 @@ public class CustomLinkedList {
 	}
 	/*
 	 * Add an element at the beggning of the list
+	 * Time Complexity : O(1)
 	 */
 	public void addFront(int data) {
 		Node temp = new Node(data);
@@ -17,6 +18,7 @@ public class CustomLinkedList {
 	}
 	/*
 	 * Add an element at the end of the list
+	 * Time Complexity : O(n)
 	 */
 	public void addEnd(int data) {
 		Node newNode = new Node(data);
@@ -38,6 +40,7 @@ public class CustomLinkedList {
 	}
 	/*
 	 * Add an element after a given Node.
+	 * Time Complexity : O(n)
 	 */
 	public void addAfter(Node insertAfter, int data) {
 		
@@ -56,7 +59,53 @@ public class CustomLinkedList {
 			temp = temp.getNext();
 		}
 	}
-	
+	/*
+	 * Given a ‘key’, delete the first occurrence of the key in linked list.
+	 */
+	public void deleteNode(int data){
+		
+		Node temp = head;
+		Node prev = null;
+		
+		// If head node itself holds the key to be deleted 
+        if (temp != null && temp.getData() == data) 
+        { 
+            head = temp.getNext(); // Changed head 
+            return; 
+        } 
+		
+		while(temp!= null && temp.getData()!=data) {
+			prev = temp;
+			temp = temp.getNext();
+		}
+		if (temp == null) {
+			System.out.println("Invalid key to delete..!!");
+		}
+		prev.setNext(temp.getNext());
+	}	
+	/*
+	 * Delete the node from given position.
+	 */
+	public void deleteNodeAtPosition(int position) {
+		int count = 0;
+		Node temp = head;
+		Node prev = null;
+		
+		if(temp!= null && position == 1){
+			head = temp.getNext();
+			return;
+		}
+		while(temp!=null && (++count != position)) {
+			prev = temp;
+			temp = temp.getNext();
+		}
+		
+		// If position is more than number of ndoes 
+        if (temp == null || temp.getNext() == null) 
+            return; 
+		
+		prev.setNext(temp.getNext());
+	}
 }
 
 class Node {
