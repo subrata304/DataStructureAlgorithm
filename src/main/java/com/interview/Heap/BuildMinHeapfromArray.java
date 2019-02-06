@@ -17,13 +17,13 @@ public class BuildMinHeapfromArray {
 		System.out.println("After Min Heapify array is: "+ Arrays.toString(A));
 	}
 	
-	protected static void buildMinHeap(int[] A, int size){
+	public static void buildMinHeap(int[] A, int size){
 		for(int i = size/2 - 1 ; i>=0 ;i--){
 			minHeapify(A, i);
 		}
 	}
 	
-	protected static void minHeapify(int[] A, int i){
+	public static void minHeapify(int[] A, int i){
 		int left = 2*i + 1;
 		int right = 2*i + 2;
 		int smallest;
@@ -40,7 +40,7 @@ public class BuildMinHeapfromArray {
 			int temp = A[smallest];
 			A[smallest] = A[i];
 			A[i] = temp;
-			System.out.println("Before calling recursion: "+ Arrays.toString(A));
+			//System.out.println("Before calling recursion: "+ Arrays.toString(A));
 			minHeapify(A, smallest);
 		}		
 	}

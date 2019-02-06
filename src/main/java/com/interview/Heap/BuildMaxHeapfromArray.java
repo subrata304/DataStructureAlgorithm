@@ -17,7 +17,7 @@ public class BuildMaxHeapfromArray {
 		System.out.println("After Max Heapify array is: "+ Arrays.toString(A));
 	}
 
-	protected static void buildMaxHeap(int[] A, int size){
+	public static void buildMaxHeap(int[] A, int size){
 		for(int i = size/2 -1 ; i>=0 ;i--){
 			maxHeapify(A, size, i);
 		}
@@ -25,7 +25,7 @@ public class BuildMaxHeapfromArray {
 	/*
 	 * A is the Heap, n is the size of the heap, i 
 	 */
-	protected static void maxHeapify(int[] A, int size, int i){
+	public static void maxHeapify(int[] A, int size, int i){
 		int left = 2*i + 1;
 		int right = 2*i + 2;
 		int largest;

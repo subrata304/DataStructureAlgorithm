@@ -32,7 +32,7 @@ public class DeleteMinElementfromMinHeap {
 	 * Time Complexity of this algorithm is : O(log n), as we are calling minHeapify which needs Order of the height 
 	 * i.e. O(log n), Space complexity also O(log n)
 	 */
-	protected static int deleteMinElement(int A[]){
+	public static int deleteMinElement(int A[]){
 		int size = A.length;
 		if(size == 0){
 			return -1;
@@ -44,7 +44,7 @@ public class DeleteMinElementfromMinHeap {
 		size--;
 		A = Arrays.copyOf(A, size);
 		BuildMinHeapfromArray.minHeapify(A, 0);
-		System.out.println("After Min Heapify array is: "+ Arrays.toString(A));
+		//System.out.println("After Min Heapify array is: "+ Arrays.toString(A));
 		return min;
 	}
 }
