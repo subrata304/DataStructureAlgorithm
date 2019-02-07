@@ -43,7 +43,7 @@ public class DeleteMaxElementfromMaxHeap {
 		int max = A[0];
 		A[0] = A[size - 1];
 		size--;
-		A = Arrays.copyOf(A, size);
+		//A = Arrays.copyOf(A, size);
 		BuildMaxHeapfromArray.maxHeapify(A, size, 0);
 		System.out.println("After Max Heapify array is: "+ Arrays.toString(A));
 		return max;

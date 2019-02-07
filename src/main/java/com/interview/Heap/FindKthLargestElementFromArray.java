@@ -10,7 +10,7 @@ public class FindKthLargestElementFromArray {
 	public static void main(String[] args) {
 		
 		int arr[] = {1, 23, 12, 9, 30, 2, 50};
-		int k = 3;
+		int k = 10;
 	
 		/*
 		 * Steps:
@@ -20,13 +20,16 @@ public class FindKthLargestElementFromArray {
 		 * Total Time Complexity: O(n + klogn)
 		 * 
 		 */
-		
+		if(k > arr.length) {
+			System.out.println("Please provide valid kth value");
+			return;
+		}
 		BuildMaxHeapfromArray.buildMaxHeap(arr, arr.length);
-		int size = arr.length;
+		//int size = arr.length;
 		for(int i = 0; i < k ; i++) {
 			int maxElement = DeleteMaxElementfromMaxHeap.deleteMaxElement(arr);
-			size--;
-			BuildMaxHeapfromArray.maxHeapify(arr, size, 0);
+			//size--;
+			//BuildMaxHeapfromArray.maxHeapify(arr, size, 0);
 			System.out.println("The Max elements are: " + maxElement);
 		}
 		

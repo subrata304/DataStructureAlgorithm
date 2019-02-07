@@ -42,7 +42,7 @@ public class DeleteMinElementfromMinHeap {
 		int min = A[0];
 		A[0] = A[size - 1];
 		size--;
-		A = Arrays.copyOf(A, size);
+		//A = Arrays.copyOf(A, size);
 		BuildMinHeapfromArray.minHeapify(A, 0);
 		//System.out.println("After Min Heapify array is: "+ Arrays.toString(A));
 		return min;
