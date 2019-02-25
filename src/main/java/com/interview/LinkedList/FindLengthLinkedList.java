@@ -14,7 +14,7 @@ public class FindLengthLinkedList {
 		return findLengthRecursion(list.head);
 	}
 
-	private static int findLengthRecursion(Node head) {
+	public static int findLengthRecursion(Node head) {
 
 		Node temp = head;
 

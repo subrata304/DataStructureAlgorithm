@@ -16,7 +16,7 @@ public class LevelOrderTraversal {
 		
 		while(!queue.isEmpty()) {
 			Node currentParent = queue.poll();
-			System.out.println(currentParent.data);
+			System.out.print(currentParent.data + "  ");
 			if(currentParent.left!=null) {
 				queue.add(currentParent.left);
 			}
@@ -27,15 +27,15 @@ public class LevelOrderTraversal {
 	}
 	
 	public static void main(String[] args) {
-		BinarySearchTree bst = new BinarySearchTree(); 
-		bst.insert( 10);
-		bst.insert( 2);
-		bst.insert( 5);
-		bst.insert( 6);
-		bst.insert( 8);
-		bst.insert( 3);
+		BinaryTreeTraversalIterative tree = new BinaryTreeTraversalIterative(); 
+		tree.root = new Node(10); 
+		tree.root.left = new Node(2); 
+		tree.root.right = new Node(5); 
+		tree.root.left.left = new Node(6); 
+		tree.root.right.left = new Node(8); 
+		tree.root.right.right = new Node(3);
 		
-		levelOrderTraverse(bst.root);
+		levelOrderTraverse(tree.root);
 	}
 	
 }

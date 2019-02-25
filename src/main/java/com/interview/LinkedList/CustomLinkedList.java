@@ -110,8 +110,8 @@ public class CustomLinkedList {
 
 class Node {
 
-	private int data;
-	private Node next;
+	public int data;
+	public Node next;
 
 	public Node(int data) {
 		this.data = data;
