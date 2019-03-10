@@ -1,5 +1,7 @@
 package com.interview.Heap;
 
+import java.util.Arrays;
+
 /*
  * Find and print the largest 3 elements from an unsorted array
  * 
@@ -10,7 +12,7 @@ public class FindKthLargestElementFromArray {
 	public static void main(String[] args) {
 		
 		int arr[] = {1, 23, 12, 9, 30, 2, 50};
-		int k = 10;
+		int k = 3;
 	
 		/*
 		 * Steps:
@@ -21,10 +23,11 @@ public class FindKthLargestElementFromArray {
 		 * 
 		 */
 		if(k > arr.length) {
-			System.out.println("Please provide valid kth value");
+			System.out.println("Please provide valid kth value - should be less than array size.");
 			return;
 		}
 		BuildMaxHeapfromArray.buildMaxHeap(arr, arr.length);
+		
 		//int size = arr.length;
 		for(int i = 0; i < k ; i++) {
 			int maxElement = DeleteMaxElementfromMaxHeap.deleteMaxElement(arr);
