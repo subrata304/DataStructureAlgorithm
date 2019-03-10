@@ -10,25 +10,25 @@ public class IndentifyingComments {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		String mine = "", read;
+		String multiPleLinesComment = "", line;
 		while (in.hasNextLine()) {
-			read = in.nextLine();
-			if (read.contains("//")) {
-				System.out.println(read.substring(read.indexOf("//"), read.length()).trim());
+			line = in.nextLine();
+			if (line.contains("//")) {
+				System.out.println(line.substring(line.indexOf("//"), line.length()).trim());
 			}
-			if (read.contains("/*") && read.contains("*/")) {
-				System.out.println(read.trim());
+			if (line.contains("/*") && line.contains("*/")) {
+				System.out.println(line.trim());
 			}
-			else if (read.contains("/*")) {
+			else if (line.contains("/*")) {
 				do {
-					mine += read.trim() + "\n";
-					read = in.nextLine();
-				} while (!read.contains("*/"));
-				mine += read.trim();
-				System.out.println(mine.trim());
-				mine = "";
+					multiPleLinesComment += line.trim() + "\n";
+					line = in.nextLine();
+				} while (!line.contains("*/"));
+				multiPleLinesComment += line.trim();
+				System.out.println(multiPleLinesComment.trim());
+				multiPleLinesComment = "";
 			}else {
-				System.out.println(read);
+				System.out.println(line);
 			}
 		}
 	}
