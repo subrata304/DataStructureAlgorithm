@@ -25,4 +25,10 @@ public class PrintLinkedList {
 		}
 		System.out.println();
 	}
+	
+	public static void printListInReverse(Node node) {
+		if(node == null) return;
+		printListInReverse(node.getNext());
+		System.out.print(node.getData()+ " -> ");
+	}
 }
