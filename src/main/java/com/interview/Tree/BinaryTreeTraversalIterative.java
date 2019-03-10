@@ -13,7 +13,7 @@ public class BinaryTreeTraversalIterative {
 	public static void inOrderTraversal(Node root) {
 
 		if(root == null) {
-			
+			return;
 		}
 		Stack<Node> stack = new Stack<Node>();
 		
