@@ -1,6 +1,6 @@
 package com.interview.Tree;
 
-public class RightViewofBinaryTree {
+public class PrintRightViewofBinaryTree {
 
 	static int maxLevel = 0;
 
@@ -29,7 +29,7 @@ public class RightViewofBinaryTree {
 		tree.root.left.right.right = new Node(5);
 		tree.root.left.right.right.right = new Node(6);
 		System.out.println("Following are nodes in Right view of Binary Tree");
-		RightViewofBinaryTree.leftView(tree.root, 1);
+		PrintRightViewofBinaryTree.leftView(tree.root, 1);
 		
 		
 	}

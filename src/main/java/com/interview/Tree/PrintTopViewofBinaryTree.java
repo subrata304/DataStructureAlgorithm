@@ -6,7 +6,7 @@ import java.util.Map.Entry;
 import java.util.Queue;
 import java.util.TreeMap;
 
-public class TopViewofBinaryTree {
+public class PrintTopViewofBinaryTree {
 
 	static Map<Integer, Integer> topView = new TreeMap<>();
 	//TreeMap - If we want to print in left to right
@@ -47,7 +47,7 @@ public class TopViewofBinaryTree {
 		tree.root.left.right.right = new Node(5);
 		tree.root.left.right.right.right = new Node(6);
 		System.out.println("Following are nodes in top view of Binary Tree");
-		TopViewofBinaryTree.topView(tree.root);
+		PrintTopViewofBinaryTree.topView(tree.root);
 		for (Entry<Integer, Integer> entry : topView.entrySet()) {
 			System.out.print(entry.getValue() + " ");
 		}
