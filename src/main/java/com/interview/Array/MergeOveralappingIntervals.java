@@ -11,25 +11,22 @@ public class MergeOveralappingIntervals {
 
 	public static void mergeIntervals(Interval arr[])  
 	{  
-		// Test if the given set has at least one interval  
 		if (arr.length <= 0)  
 			return;  
 
-		// Create an empty stack of intervals  
 		Stack<Interval> stack=new Stack<>(); 
 
 		// sort the intervals in increasing order of start time  
-		Arrays.sort(arr,new Comparator<Interval>(){ 
-			public int compare(Interval i1,Interval i2) 
-			{ 
-				return i1.start-i2.start; 
-			} 
-		}); 
+		Arrays.sort(arr, (i1, i2) -> {return i1.start-i2.start; }); 
 
+		/*
+		 * new Comparator<Interval>(){ public int compare(Interval i1,Interval i2) {
+		 * return i1.start-i2.start; } }
+		 */
+		
 		// push the first interval to stack  
 		stack.push(arr[0]);  
 
-		// Start from the next interval and merge if necessary  
 		for (int i = 1 ; i < arr.length; i++)  
 		{  
 			// get interval from stack top  
@@ -50,7 +47,6 @@ public class MergeOveralappingIntervals {
 			}  
 		}  
 
-		// Print contents of stack  
 		System.out.print("The Merged Intervals are: "); 
 		while (!stack.isEmpty())  
 		{  

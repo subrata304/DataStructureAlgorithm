@@ -27,11 +27,16 @@ public class FindMedianOfRunningNumbers {
 			float number = scanner.nextInt();
 			
 			minHeap.offer(number);
-			maxHeap.offer(minHeap.poll());
+			//maxHeap.offer(minHeap.poll());
 			
-			if(maxHeap.size() > minHeap.size()) {
-				minHeap.offer(maxHeap.poll());
+			
+			if (minHeap.size() - maxHeap.size() > 1) {
+				maxHeap.offer(minHeap.poll());
 			}
+			
+		//	if (maxHeap.size() > minHeap.size()) {
+		//		minHeap.offer(maxHeap.poll());
+		//	}
 			
 			if(minHeap.size() > maxHeap.size()) {
 				System.out.println("The median is: "+ minHeap.peek());
