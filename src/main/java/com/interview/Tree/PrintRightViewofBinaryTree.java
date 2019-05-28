@@ -4,7 +4,7 @@ public class PrintRightViewofBinaryTree {
 
 	static int maxLevel = 0;
 
-	public static void leftView(Node root, int level) {
+	public static void rightView(Node root, int level) {
 
 		if (root == null) {
 			return;
@@ -15,8 +15,8 @@ public class PrintRightViewofBinaryTree {
 			System.out.print(root.data + " ");
 		}
 
-		leftView(root.right, level + 1);
-		leftView(root.left, level + 1);
+		rightView(root.right, level + 1);
+		rightView(root.left, level + 1);
 
 	}
 
@@ -29,7 +29,7 @@ public class PrintRightViewofBinaryTree {
 		tree.root.left.right.right = new Node(5);
 		tree.root.left.right.right.right = new Node(6);
 		System.out.println("Following are nodes in Right view of Binary Tree");
-		PrintRightViewofBinaryTree.leftView(tree.root, 1);
+		PrintRightViewofBinaryTree.rightView(tree.root, 1);
 		
 		
 	}

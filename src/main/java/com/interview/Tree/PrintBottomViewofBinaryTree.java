@@ -8,7 +8,7 @@ import java.util.TreeMap;
 
 public class PrintBottomViewofBinaryTree {
 
-	static Map<Integer, Integer> topView = new TreeMap<>();
+	static Map<Integer, Integer> bottomView = new TreeMap<>();
 	//TreeMap - If we want to print in left to right
 	//LinkedHashMap - If we want to print in level wise
 	
@@ -26,7 +26,7 @@ public class PrintBottomViewofBinaryTree {
 			QueueNode temp = queue.poll();
 			int hd = temp.hd;
 			//if (!topView.containsKey(temp.hd)) {
-				topView.put(temp.hd, temp.node.data);
+				bottomView.put(temp.hd, temp.node.data);
 			//}
 
 			if (temp.node.left != null)
@@ -47,7 +47,7 @@ public class PrintBottomViewofBinaryTree {
 		tree.root.left.right.right.right = new Node(6);
 		System.out.println("Following are nodes in Bottom view of Binary Tree");
 		PrintBottomViewofBinaryTree.bottomView(tree.root);
-		for (Entry<Integer, Integer> entry : topView.entrySet()) {
+		for (Entry<Integer, Integer> entry : bottomView.entrySet()) {
 			System.out.print(entry.getValue() + " ");
 		}
 
