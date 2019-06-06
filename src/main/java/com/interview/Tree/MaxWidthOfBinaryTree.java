@@ -38,7 +38,7 @@ public class MaxWidthOfBinaryTree {
 	//Start - Using Pre Order Traversal approach 
 	public static void  getMaxWidth(Node node)  
     { 
-        int h = HeightOfBinaryTree.heightOfBinaryTree(node); 
+        int h = HeightOfBinaryTree.heightOfBinaryTreeRecursive(node); 
    
         int count[] = new int[h]; 
    

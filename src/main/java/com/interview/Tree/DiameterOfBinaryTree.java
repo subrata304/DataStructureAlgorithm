@@ -7,8 +7,8 @@ public class DiameterOfBinaryTree {
 		if(root == null) {
 			return 0;
 		}
-		int leftheight = HeightOfBinaryTree.heightOfBinaryTree(root.left);
-		int rightHeight = HeightOfBinaryTree.heightOfBinaryTree(root.right);
+		int leftheight = HeightOfBinaryTree.heightOfBinaryTreeRecursive(root.left);
+		int rightHeight = HeightOfBinaryTree.heightOfBinaryTreeRecursive(root.right);
 		
 		int leftDiameter = diameter(root.left);
 		int rightDiameter = diameter(root.right);
