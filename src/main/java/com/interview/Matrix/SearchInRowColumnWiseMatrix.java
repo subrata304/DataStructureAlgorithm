@@ -24,7 +24,7 @@ public class SearchInRowColumnWiseMatrix {
 			}
 			if (array[i][j] > searchElement)
 				j--;
-			else // if mat[i][j] < x
+			else // if array[i][j] < searchElement
 				i++;
 		}
 
@@ -33,10 +33,12 @@ public class SearchInRowColumnWiseMatrix {
 	}
 	
 	public static void main(String[] args) {
-		int array[][] = {{0, 6, 8, 9, 11}, 
-                {20, 22, 28, 29, 31}, 
-                {36, 38, 50, 61, 63}, 
-                {64, 66, 100, 122, 128}};
+		int array[][] = {
+				{0,   6,   8,   9,  11}, 
+                {20, 22,  28,  29,  31}, 
+                {36, 38,  50,  61,  63}, 
+                {64, 66, 100, 122, 128}
+               };
 
 		search(array, 5, 128);
 	}

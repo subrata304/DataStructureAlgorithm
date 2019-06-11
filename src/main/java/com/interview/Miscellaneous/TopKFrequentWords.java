@@ -12,7 +12,7 @@ import java.util.PriorityQueue;
  * 1. https://stackoverflow.com/questions/13987948/finding-k-most-common-words-in-a-file-memory-usage
  * 2. https://www.geeksforgeeks.org/find-the-k-most-frequent-words-from-a-file/
  * 3. https://stackoverflow.com/questions/185697/the-most-efficient-way-to-find-top-k-frequent-words-in-a-big-word-sequence
- * 4. http://javaworldwide.blogspot.com/2015/09/find-k-most-frequent-words-from-file.html 
+ * 4. http://javaworldwide.blogspot.com/2015/09/find-k-most-frequent-words-from-file.html
  */
 
 public class TopKFrequentWords {
@@ -54,7 +54,7 @@ public class TopKFrequentWords {
         }
         PriorityQueue<String> heap = new PriorityQueue<String>(
                 (w1, w2) -> count.get(w1).equals(count.get(w2)) ?
-                w2.compareTo(w1) : count.get(w1) - count.get(w2) );
+                w1.compareTo(w2) : count.get(w2) - count.get(w1) );
 
         for (String word: count.keySet()) {
             heap.offer(word);
@@ -67,7 +67,7 @@ public class TopKFrequentWords {
         	result.add(heap.poll());
         }
         
-        Collections.reverse(result);
+        //Collections.reverse(result);
         return result;
     }
 	
@@ -80,7 +80,7 @@ public class TopKFrequentWords {
 		
 		List<String> list2 = topKFrequent2ndApproach(arr, k);
 		
-		System.out.println(list1.toString());
+		//System.out.println(list1.toString());
 		System.out.println(list2.toString());
 		
 	}

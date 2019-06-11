@@ -1,8 +1,10 @@
 package com.interview.Array;
 
-public class CountOfDuplicateElementFromAnArray {
+public class CountOfDuplicateElementFromSortedArray {
 
-
+	/*
+	 * https://www.geeksforgeeks.org/count-number-of-occurrences-or-frequency-in-a-sorted-array/
+	 */
 	//Approach 1 : Loop through the whole array and get the count - O(N)
 	//Approach 2: Get the element using Binary Search - O(logn) and then 
 	//go to left and right to find other occurences. which is O(N),

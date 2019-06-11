@@ -2,6 +2,10 @@ package com.interview.LinkedList;
 
 public class IntersectionOfLinkedList {
 
+	/*
+	 * Time Complexity: O(m+n) where m and n are size of the given LinkedList
+	 * Auxiliary Space: O(1)
+	 */
 	
 	public static void findIntersectionPoint(Node head1, Node head2){
 		
