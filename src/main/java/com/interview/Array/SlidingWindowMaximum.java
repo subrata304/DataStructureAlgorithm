@@ -25,7 +25,6 @@ public class SlidingWindowMaximum {
 		}
 	}
 
-	// Driver method
 	public static void main(String args[]) {
 		int arr[] = { 1, 2, 3, 1, 4, 5, 2, 3, 6 };
 		int k = 3;

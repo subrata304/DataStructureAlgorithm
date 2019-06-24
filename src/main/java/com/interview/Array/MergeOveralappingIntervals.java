@@ -8,67 +8,61 @@ import java.util.Stack;
 
 public class MergeOveralappingIntervals {
 
+	public static void mergeIntervals(Interval arr[]) {
+		if (arr.length <= 0)
+			return;
 
-	public static void mergeIntervals(Interval arr[])  
-	{  
-		if (arr.length <= 0)  
-			return;  
+		Stack<Interval> stack = new Stack<>();
 
-		Stack<Interval> stack=new Stack<>(); 
-
-		// sort the intervals in increasing order of start time  
-		Arrays.sort(arr, (i1, i2) -> {return i1.start-i2.start; }); 
+		// sort the intervals in increasing order of start time
+		Arrays.sort(arr, (i1, i2) -> {
+			return i1.start - i2.start;
+		});
 
 		/*
 		 * new Comparator<Interval>(){ public int compare(Interval i1,Interval i2) {
 		 * return i1.start-i2.start; } }
 		 */
-		
-		// push the first interval to stack  
-		stack.push(arr[0]);  
 
-		for (int i = 1 ; i < arr.length; i++)  
-		{  
-			// get interval from stack top  
-			Interval top = stack.peek();  
+		// push the first interval to stack
+		stack.push(arr[0]);
 
-			// if current interval is not overlapping with stack top,  
-			// push it to the stack  
-			if (top.end < arr[i].start)  
-				stack.push(arr[i]);  
+		for (int i = 1; i < arr.length; i++) {
+			Interval top = stack.peek();
 
-			// Otherwise update the ending time of top if ending of current  
-			// interval is more  
-			else if (top.end < arr[i].end)  
-			{  
-				top.end = arr[i].end;  
-				stack.pop();  
-				stack.push(top);  
-			}  
-		}  
+			// if current interval is not overlapping with stack top,
+			// push it to the stack
+			if (top.end < arr[i].start)
+				stack.push(arr[i]);
 
-		System.out.print("The Merged Intervals are: "); 
-		while (!stack.isEmpty())  
-		{  
-			Interval t = stack.pop();  
-			System.out.print("["+t.start+","+t.end+"] "); 
-		}   
-	}   
+			// Otherwise update the ending time of top if ending of current
+			// interval is more
+			else if (top.end < arr[i].end) {
+				top.end = arr[i].end;
+				stack.pop();
+				stack.push(top);
+			}
+		}
+
+		System.out.print("The Merged Intervals are: ");
+		while (!stack.isEmpty()) {
+			Interval t = stack.pop();
+			System.out.print("[" + t.start + "," + t.end + "] ");
+		}
+	}
 
 	public static void main(String args[]) {
 		Interval arr[] = new Interval[4];
 
-
-		arr[0] = new Interval(6, 8); 
-		arr[1] = new Interval(1, 9); 
-		arr[2] = new Interval(2, 4); 
+		arr[0] = new Interval(6, 8);
+		arr[1] = new Interval(1, 9);
+		arr[2] = new Interval(2, 4);
 		arr[3] = new Interval(4, 7);
 
-
-		//arr[0] = new Interval(1,3);
-		//arr[1] = new Interval(2,6);
-		//arr[2] = new Interval(8,10);
-		//arr[3] = new Interval(15,18);
+		// arr[0] = new Interval(1,3);
+		// arr[1] = new Interval(2,6);
+		// arr[2] = new Interval(8,10);
+		// arr[3] = new Interval(15,18);
 
 		mergeIntervals(arr);
 	}

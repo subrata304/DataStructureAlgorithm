@@ -19,6 +19,7 @@ public class FindDuplicatesFromArrayInLinearTimeConstantSpace {
             else
                 System.out.print(Math.abs(arr[i]) + " "); 
         }
+        System.out.println("");
     }
 	// Method 2 - This method print repeated number single time but the order is not maintained.
 	public static void printRepeating(int arr[], int size){
@@ -33,14 +34,16 @@ public class FindDuplicatesFromArrayInLinearTimeConstantSpace {
 	    for (int i = 0; i < size; i++){ 
 	    	
 	        if ((arr[i]/size) > 1)
-	            System.out.println(i +" "); 
-	    }  
+	            System.out.print(i +" "); 
+	    }
+	    System.out.println("");
     }
     // Method 3 - This method will print repeated number single time in the order it is there in the original array
 	
 	public static void printDuplicates(int arr[], int n) {
 	    
 		int fl = 0;
+		System.out.println("The repeating elements are from method printDuplicates: ");
 	    for (int i= 0; i < n; i++){
 	  
 	        // Check if current element is 
@@ -66,6 +69,7 @@ public class FindDuplicatesFromArrayInLinearTimeConstantSpace {
 	        // mark repetition of arr[i]. 
 	        arr[arr[i] % n] += n; 
 	    }
+	    System.out.println(" ");
 	  
 	    if (!(fl > 0)) {
 	        System.out.println("No Duplicate element present in the array.");
