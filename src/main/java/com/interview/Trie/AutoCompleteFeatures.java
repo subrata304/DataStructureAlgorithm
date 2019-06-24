@@ -67,16 +67,21 @@ public class AutoCompleteFeatures {
 			current = node;
 		}
 		
-		getWords(current);
+		getWords(current, word);
 		
 	}
 
-	private void getWords(TrieNode current) {
+	private void getWords(TrieNode current, String prefix) {
 
-		if(current.endOfWord) return;
+		if(current.endOfWord) {
+			System.out.println(prefix);
+			if(current.children==null) {
+				return;
+			}
+		}
 		
 		for(Character c : current.children.keySet()) {
-			getWords(current.children.get(c));
+			getWords(current.children.get(c), prefix+c);
 		}
 		
 	}

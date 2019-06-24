@@ -2,17 +2,14 @@ package com.interview.LinkedList;
 
 public class RemoveLoopInaLinkedList {
 
-	
 	public static void main(String[] args) {
 		CustomLinkedList list1 = new CustomLinkedList(1);
 		list1.addEnd(2);
 		list1.addEnd(3);
 		list1.addEnd(4);
 		list1.addEnd(5);
-		
+
 		list1.head.next.next.next.next.next = list1.head.next;
-		
-		
 		detectAndRemoveLoop(list1.head);
 		PrintLinkedList.printList(list1.head);
 	}
@@ -36,7 +33,7 @@ public class RemoveLoopInaLinkedList {
 		Node ptr1 = null, ptr2 = null;
 
 		/*
-		 * Set a pointer to the beging of the Linked List and move it one by one to find
+		 * Set a pointer to the begging of the Linked List and move it one by one to find
 		 * the first node which is part of the Linked List
 		 */
 		ptr1 = curr;
@@ -51,7 +48,7 @@ public class RemoveLoopInaLinkedList {
 			}
 
 			/*
-			 * If ptr2 reahced ptr1 then there is a loop. So break the loop
+			 * If ptr2 reached ptr1 then there is a loop. So break the loop
 			 */
 			if (ptr2.next == ptr1) {
 				break;

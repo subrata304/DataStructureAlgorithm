@@ -1,4 +1,4 @@
-package com.interview.Miscellaneous;
+package com.interview.StackAndQueue;
 
 import java.util.Stack;
 
@@ -107,7 +107,6 @@ class MyStackWithoutExtraSpace {
 			System.out.println(t);
 	}
 
-	// Removes the top element from MyStack
 	void pop() {
 		if (s.isEmpty()) {
 			System.out.println("Stack is empty");
@@ -128,7 +127,6 @@ class MyStackWithoutExtraSpace {
 			System.out.println(t);
 	}
 
-	// Insert new number into MyStack
 	void push(Integer x) {
 		if (s.isEmpty()) {
 			minEle = x;
