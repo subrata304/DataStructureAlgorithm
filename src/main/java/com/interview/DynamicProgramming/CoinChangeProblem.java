@@ -69,7 +69,7 @@ public class CoinChangeProblem {
 		int arr[] = { 1, 2, 5, 10 };
 		int length = arr.length;
 		int total = 10;
-		System.out.println(count(arr, length, total));
+		System.out.println("Total No of Ways: " +count(arr, length, total));
 		
 		printCoinChangingSolution(total, arr);
 		
